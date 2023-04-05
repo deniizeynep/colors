@@ -8,8 +8,6 @@ import { colorReducer, initialState } from '../color-reducer';
 const Application = () => {
   const [{ hexColor }, dispatch] = useReducer(colorReducer, initialState)
 
-  console.log({hexColor})
-
   return (
     <div className="grid max-w-3xl grid-cols-1 gap-8 p-8 pb-40 mx-auto dark:bg-slate-900 dark:text-white sm:grid-cols-2">
       <ColorPicker
@@ -20,9 +18,9 @@ const Application = () => {
         })
         }
       />
-      <AdjustColors dispatch={dispatch} hexColor={hexColor} />
+      <AdjustColors  hexColor={hexColor} dispatch={dispatch}/>
       <RelatedColors hexColor={hexColor} />
-      <SavedColors hexColor={hexColor} />
+      <SavedColors hexColor={hexColor} dispatch={dispatch}/>
     </div>
   );
 };
