@@ -1,6 +1,7 @@
 import { hex } from 'color-convert';
 import LabeledInput from '../shared/labeled-input';
 import { Dispatch } from 'react';
+import { AdjustColorActions } from '../../color-reducer';
 
 type HexToRGBProps = {
   hexColor: string;
@@ -13,7 +14,7 @@ const HexToRGB = ({ hexColor, dispatch}: HexToRGBProps) => {
 
   const updateRGB = ({ red = r, green = g, blue = b }) => {
     dispatch({
-      type: 'update-rg-color',
+      type: 'update-rgb-color',
       payload: { rgb: [red, green, blue]}
     });
   };
